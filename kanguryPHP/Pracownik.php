@@ -10,8 +10,8 @@ $pageData->currentAplikacjaPHP = "current";
 $pageData->currentPracownik = "current";
 
 $dbInfo = "mysql:host=217.173.198.143;dbname=s83252_kangury";
-$dbUser = "mglowaczewski";
-$dbPassword = "Haslo123";
+$dbUser = "****";
+$dbPassword = "****";
 try {
     $db = new PDO( $dbInfo, $dbUser, $dbPassword );
     $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
