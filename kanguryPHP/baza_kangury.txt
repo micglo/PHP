@@ -1,0 +1,65 @@
+create database kangury;
+
+create table admin(
+    admin_id INT NOT NULL AUTO_INCREMENT,
+    email TEXT,
+    password VARCHAR(32),
+    primary key (admin_id)
+)
+
+create table rodzaj (
+    IdRodzaj INT NOT NULL AUTO_INCREMENT,
+    Rodzaj TEXT,
+    PRIMARY KEY (IdRodzaj)
+    );
+
+create table klatka (
+    IdKlatka INT NOT NULL AUTO_INCREMENT,
+    Klatka INT,
+    PRIMARY KEY (IdKlatka)
+    );
+    
+create table kangur (
+    IdKangur INT NOT NULL AUTO_INCREMENT,
+    DataUrodzenia DATE,
+    KlatkaId INT,
+    RodzajId INT,
+    PRIMARY KEY (IdKangur),
+    FOREIGN KEY (RodzajId) REFERENCES rodzaj(IdRodzaj),
+    FOREIGN KEY (KlatkaId) REFERENCES klatka(IdKlatka)
+    );
+	
+create table klient (
+    IdKlient INT NOT NULL AUTO_INCREMENT,
+    Imie TEXT,
+    Nazwisko TEXT,
+    Pesel INT,
+    KangurId INT,
+    PRIMARY KEY (IdKlient),
+    FOREIGN KEY (KangurId) REFERENCES kangur(IdKangur)
+    );
+	
+INSERT INTO `admin`(`email`, `password`) VALUES ('michalglowaczewski@gmail.com', md5('Haslo'));
+INSERT INTO `rodzaj`( `Rodzaj`) VALUES ('Olbrzymi');
+INSERT INTO `rodzaj`( `Rodzaj`) VALUES ('Szary');
+INSERT INTO `rodzaj`( `Rodzaj`) VALUES ('Rudy');
+INSERT INTO `klatka`(`Klatka`) VALUES (1);
+INSERT INTO `klatka`(`Klatka`) VALUES (2);
+INSERT INTO `klatka`(`Klatka`) VALUES (3);
+INSERT INTO `klatka`(`Klatka`) VALUES (4);
+INSERT INTO `klatka`(`Klatka`) VALUES (5);
+INSERT INTO `klatka`(`Klatka`) VALUES (6);
+INSERT INTO `klatka`(`Klatka`) VALUES (7);
+INSERT INTO `klatka`(`Klatka`) VALUES (8);
+INSERT INTO `klatka`(`Klatka`) VALUES (9);
+INSERT INTO `klatka`(`Klatka`) VALUES (10);
+INSERT INTO `klatka`(`Klatka`) VALUES (11);
+INSERT INTO `klatka`(`Klatka`) VALUES (12);
+INSERT INTO `klatka`(`Klatka`) VALUES (13);
+INSERT INTO `klatka`(`Klatka`) VALUES (14);
+INSERT INTO `klatka`(`Klatka`) VALUES (15);
+INSERT INTO `klatka`(`Klatka`) VALUES (16);
+INSERT INTO `klatka`(`Klatka`) VALUES (17);
+INSERT INTO `klatka`(`Klatka`) VALUES (18);
+INSERT INTO `klatka`(`Klatka`) VALUES (19);
+INSERT INTO `klatka`(`Klatka`) VALUES (20);
